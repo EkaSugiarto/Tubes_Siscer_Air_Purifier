@@ -1,0 +1,81 @@
+[System]
+Name='TubesFuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=2
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Suhu'
+Range=[0 40]
+NumMFs=3
+MF1='Cold':'trapmf',[0 0 20 25]
+MF2='Normal':'trimf',[20 25 30]
+MF3='Hot':'trapmf',[25 30 40 40]
+
+[Input2]
+Name='Kelembapan'
+Range=[0 100]
+NumMFs=3
+MF1='Dry':'trapmf',[0 0 40 50]
+MF2='Normal':'trimf',[40 50 60]
+MF3='Humid':'trapmf',[50 60 100 100]
+
+[Input3]
+Name='PM2.5'
+Range=[0 200]
+NumMFs=3
+MF1='Good':'trapmf',[0 0 50 100]
+MF2='Moderate':'trimf',[50 100 150]
+MF3='Bad':'trapmf',[100 150 200 200]
+
+[Output1]
+Name='Kipas'
+Range=[0 255]
+NumMFs=3
+MF1='Low':'trapmf',[0 0 50 100]
+MF2='Medium':'trimf',[50 100 150]
+MF3='High':'trapmf',[100 150 255 255]
+
+[Output2]
+Name='Heater'
+Range=[0 100]
+NumMFs=3
+MF1='Off':'trapmf',[0 0 40 50]
+MF2='Low_Heat':'trimf',[40 50 60]
+MF3='High_Heat':'trapmf',[50 60 100 100]
+
+[Rules]
+1 1 1, 1 1 (1) : 1
+1 1 2, 1 2 (1) : 1
+1 1 3, 2 2 (1) : 1
+1 2 1, 1 1 (1) : 1
+1 2 2, 2 2 (1) : 1
+1 2 3, 2 3 (1) : 1
+1 3 1, 2 1 (1) : 1
+1 3 2, 2 3 (1) : 1
+1 3 3, 3 3 (1) : 1
+2 1 1, 1 1 (1) : 1
+2 1 2, 1 2 (1) : 1
+2 1 3, 2 2 (1) : 1
+2 2 1, 1 1 (1) : 1
+2 2 2, 2 2 (1) : 1
+2 2 3, 2 3 (1) : 1
+2 3 1, 2 1 (1) : 1
+2 3 2, 2 3 (1) : 1
+2 3 3, 3 3 (1) : 1
+3 1 1, 2 1 (1) : 1
+3 1 2, 2 2 (1) : 1
+3 1 3, 3 2 (1) : 1
+3 2 1, 2 1 (1) : 1
+3 2 2, 3 2 (1) : 1
+3 2 3, 3 3 (1) : 1
+3 3 1, 3 1 (1) : 1
+3 3 2, 3 3 (1) : 1
+3 3 3, 3 3 (1) : 1
