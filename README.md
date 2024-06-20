@@ -8,3 +8,7 @@ Tugas besar ini dirancang dan dibuat oleh:
 
 
 Kelas Sistem Cerdas S2TE-RB1
+
+Telkom University
+
+Tahun 2024
